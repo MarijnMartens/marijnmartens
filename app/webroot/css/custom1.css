@@ -8,3 +8,8 @@
 .footer > .container{
     text-align: center;
 }
+
+.jumbotron{
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
