@@ -23,13 +23,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.ctp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.ctp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/Login/index.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="35" selection-start="80" selection-end="80" vertical-scroll-proportion="0.056229327" vertical-offset="0" max-vertical-offset="907">
+            <state line="3" column="35" selection-start="80" selection-end="80" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="187">
               <folding>
                 <marker date="1401829925764" expanded="true" signature="15:83" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Web.config" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="0" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.67416936" vertical-offset="0" max-vertical-offset="933">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,6 +54,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/View/Login/index.ctp" />
+        <option value="$PROJECT_DIR$/Web.config" />
       </list>
     </option>
   </component>
@@ -229,10 +239,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/View/Login/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="35" selection-start="80" selection-end="80" vertical-scroll-proportion="0.056229327" vertical-offset="0" max-vertical-offset="907">
+        <state line="3" column="35" selection-start="80" selection-end="80" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="187">
           <folding>
             <marker date="1401829925764" expanded="true" signature="15:83" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.67416936" vertical-offset="0" max-vertical-offset="933">
+          <folding />
         </state>
       </provider>
     </entry>
