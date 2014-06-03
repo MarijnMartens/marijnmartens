@@ -1,0 +1,10 @@
+
+.footer{
+    padding-top: 10px;
+    border: 1px solid transparent;
+    background-color: #ededed;
+}
+
+.footer > .container{
+    text-align: center;
+}
