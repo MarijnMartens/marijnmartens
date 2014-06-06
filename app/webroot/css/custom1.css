@@ -8,8 +8,16 @@
 .footer > .container{
     text-align: center;
 }
-
+<!-- Keeping the jumbotron of the header -->
 .jumbotron{
     padding-top: 50px;
     padding-bottom: 10px;
+}
+
+<!-- Island header left and right alignment same line -->
+.alignment{
+    clear:both;
+}
+.alignment-left{
+    float:left;
 }
