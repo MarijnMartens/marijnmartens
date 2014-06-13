@@ -23,14 +23,11 @@ class ContactController extends AppController
     public function add()
     {
         $this->autoRender = false;
-        //require '../Lib/PHPMailer-master/class.phpmailer.php';
         if ($this->request->is('post')) {
             //Load model
             $this->loadModel('Contact');
             $this->Contact->set($this->request->data);
             if ($this->Contact->validates()) {
-                echo 'validation success<br/>';
-                echo $this->request->data['message'];
                 require '../Lib/PHPMailer-master/class.phpmailer.php';
                 try {
                     $mail = new PHPMailer;
