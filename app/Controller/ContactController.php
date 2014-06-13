@@ -52,7 +52,7 @@ class ContactController extends AppController
                 } catch (Exception $e) {
                     $this->Session->setFlash('Unable to send your message, try again later or contact Marijn directly via contact@marijnmartens.be', null, array(), 'error');
                 }*/
-                require '../Lib/test.php';
+                require_once '../Lib/test.php';
 
             } else {
                 echo 'error';/*
