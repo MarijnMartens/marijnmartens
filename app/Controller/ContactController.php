@@ -29,6 +29,8 @@ class ContactController extends AppController
             $this->loadModel('Contact');
             $this->Contact->set($this->request->data);
             if ($this->Contact->validates()) {
+                echo 'validation success<br/>';
+                echo $this->request->data['message'];
                 require '../Lib/PHPMailer-master/class.phpmailer.php';
                 try {
                     $mail = new PHPMailer;
@@ -43,10 +45,9 @@ class ContactController extends AppController
                     $mail->From = "contact@marijnmartens.be";
                     $mail->addAddress("contact@marijnmartens.be"); // Add a recipient
                     $mail->isHTML(true);
-                    $mail->Subject = "[Site Contact] Message from " . $this->data['Contact']['email1'];
-                    $mail->Body = $this->data['Contact']['message'];
+                    $mail->Subject = "[Site Contact] Message from " . $this->request->data['email1'];
+                    $mail->Body = $this->request->data['message'];
                     if (!$mail->send()) {
-
                         $this->Session->setFlash('[Error Mailer] (ContactController add L52)', null, array(), 'error');
                         return $this->redirect(array('action' => 'index'));
                     }
