@@ -60,10 +60,35 @@
 </div>
 <!-- End navbar -->
 <div id="wrap"><!-- Page content in wrapper for footer -->
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
+            <!-- Display flash messages -->
+            <?php if ($this->Session->check('Message.error')) { ?>
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Error!</strong> <?= $this->Session->flash('error') ?>
+                </div>
+            <?php } elseif ($this->Session->check('Message.warning')) { ?>
+                <div class="alert alert-warning alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Warning!</strong> <?= $this->Session->flash('warning') ?>
+                </div>
+            <?php
+            } elseif ($this->Session->check('Message.success')) {
+                ?>
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Success!</strong> <?= $this->Session->flash('success') ?>
+                </div>
+            <?php
+            }
+            ?>
+
+
             <h1><?= $data['title'] ?></h1>
+
             <h3><?= $data['subtitle'] ?></h3>
         </div>
     </div>
