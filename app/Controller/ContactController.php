@@ -28,7 +28,7 @@ class ContactController extends AppController
             $this->loadModel('Contact');
             $this->Contact->set($this->request->data);
             if ($this->Contact->validates()) {
-                require '../Lib/PHPMailer-master/class.phpmailer.php';
+                /*require '../Lib/PHPMailer-master/class.phpmailer.php';
                 try {
                     $mail = new PHPMailer;
 
@@ -51,16 +51,19 @@ class ContactController extends AppController
                     $this->Session->setFlash('Mail send.', null, array(), 'success');
                 } catch (Exception $e) {
                     $this->Session->setFlash('Unable to send your message, try again later or contact Marijn directly via contact@marijnmartens.be', null, array(), 'error');
-                }
+                }*/
+                require '../Lib/test.php';
+
             } else {
+                echo 'error';/*
                 $errors = $this->Contact->validationErrors;
                 $errorMessage = '';
                 foreach ($errors as $error) {
                     $errorMessage = $errorMessage . $error[0] . '</br>';
                 }
-                $this->Session->setFlash($errorMessage, null, array(), 'error');
+                $this->Session->setFlash($errorMessage, null, array(), 'error');*/
             }
         }
-        $this->redirect(array('controller' => 'contact', 'action' => 'index'));
+     //   $this->redirect(array('controller' => 'contact', 'action' => 'index'));
     }
 }
