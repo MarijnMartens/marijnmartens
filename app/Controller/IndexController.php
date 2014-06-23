@@ -11,15 +11,16 @@ class IndexController extends AppController
     public function index()
     {
         //Load model
-        $this->loadModel('Post');
+        $this->loadModel('Page');
         //Get data
-        $DynamicData = $this->Post->getPosts(1);
+        $DynamicData = $this->Page->find('all');;
         //Prepare for view
         $data = array(
             'title' => 'Home',
             'subtitle' => 'Hi there stranger!',
             'posts' => $DynamicData
         );
+
         //Render view
         $this->set('data', $data);
     }

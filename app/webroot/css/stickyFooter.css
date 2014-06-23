@@ -6,6 +6,11 @@ body {
     /* The html and body elements cannot have any padding or margin. */
 }
 
+.jumbotron {
+    padding-top: 50px;
+    padding-bottom: 0px;
+}
+
 /* Wrapper for page content to push down footer */
 #wrap {
     min-height: 100%;
@@ -33,4 +38,28 @@ body {
         padding-left: 20px;
         padding-right: 20px;
     }
+}
+
+.footer{
+    padding-top: 10px;
+    border: 1px solid transparent;
+    background-color: #ededed;
+}
+
+.footer > .container{
+    text-align: center;
+}
+
+<!-- Island header left and right alignment same line -->
+.alignment{
+    clear:both;
+}
+.alignment-left{
+    float:left;
+}
+.form-control {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }

@@ -32,5 +32,34 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller
 {
+    public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array(
+                'controller' => 'posts',
+                'action' => 'index'
+            ),
+            'logoutRedirect' => array(
+                'controller' => 'pages',
+                'action' => 'display',
+                'home'
+            )
+        )
+    );
+
+    public function beforeFilter()
+    {
+        $this->Auth->allow('index', 'view');
+    }
+
+    public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['role']) && $user['role'] === '1') {
+            return true;
+        }
+        // Default deny
+        return false;
+    }
 
 }

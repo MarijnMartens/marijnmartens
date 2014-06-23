@@ -17,6 +17,7 @@ class ContactController extends AppController
             'title' => 'Contact',
             'subtitle' => 'Want to tell me something?'
         );
+        $this->set('page_for_layout', 'contact');
         $this->set('data', $data);
     }
 
@@ -27,8 +28,11 @@ class ContactController extends AppController
             //Load model
             $this->loadModel('Contact');
             $this->Contact->set($this->request->data);
+            if( $this->data['email1'] != $this->data['email2'] ) {
+                $this->Contact->invalidate('email1', "The email addresses don't match.");
+            }
             if ($this->Contact->validates()) {
-                /*require '../Lib/PHPMailer-master/class.phpmailer.php';
+                require $_SERVER["DOCUMENT_ROOT"] . "\app\Lib\PHPMailer-master\class.phpmailer.php";
                 try {
                     $mail = new PHPMailer;
 
@@ -42,28 +46,28 @@ class ContactController extends AppController
                     $mail->From = "contact@marijnmartens.be";
                     $mail->addAddress("contact@marijnmartens.be"); // Add a recipient
                     $mail->isHTML(true);
-                    $mail->Subject = "[Site Contact] Message from " . $this->request->data['email1'];
-                    $mail->Body = $this->request->data['message'];
+                    $mail->Subject = "[Site Contact] Message from " . $this->request->data['name'];
+                    $mail->Body = '<p><b>Message from:</b> <a href="mailto:' . $this->request->data['email1'] . '">' . $this->request->data['email1'] . '</a></p><p><b>Message:</b><br/>' . nl2br($this->request->data['message']) . '<br/>';
                     if (!$mail->send()) {
                         $this->Session->setFlash('[Error Mailer] (ContactController add L52)', null, array(), 'error');
-                        return $this->redirect(array('action' => 'index'));
+                    } else {
+                        $this->Session->setFlash('Mail send.', null, array(), 'success');
                     }
-                    $this->Session->setFlash('Mail send.', null, array(), 'success');
                 } catch (Exception $e) {
                     $this->Session->setFlash('Unable to send your message, try again later or contact Marijn directly via contact@marijnmartens.be', null, array(), 'error');
-                }*/
-                require_once '../Lib/test.php';
-
+                } finally {
+                    $this->redirect(array('controller' => 'contact', 'action' => 'index'));
+                }
             } else {
-                echo 'error';/*
-                $errors = $this->Contact->validationErrors;
+                /*$errors = $this->Contact->validationErrors;
                 $errorMessage = '';
                 foreach ($errors as $error) {
                     $errorMessage = $errorMessage . $error[0] . '</br>';
                 }
                 $this->Session->setFlash($errorMessage, null, array(), 'error');*/
+                $this->Session->setFlash('Some fields were not correct', null, array(), 'error');
             }
         }
-     //   $this->redirect(array('controller' => 'contact', 'action' => 'index'));
+        $this->redirect(array('controller' => 'contact', 'action' => 'index'));
     }
 }

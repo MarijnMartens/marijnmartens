@@ -26,11 +26,7 @@ class Contact extends AppModel
             'email' => array(
                 'rule' => array('email', 'true'),
                 'message' => 'Please supply a valid email address'
-            )/*,
-            'match' => array(
-                'rule' => array('identicalFieldValues', 'email2'),
-                'message' => 'The email addresses do not match'
-            )*/
+            )
         ),
         'message' => array(
             'rule' => array('minLength', '20'),

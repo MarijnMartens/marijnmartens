@@ -9,10 +9,11 @@
     text-align: center;
 }
 <!-- Keeping the jumbotron of the header -->
-.jumbotron{
+body {
     padding-top: 50px;
-    padding-bottom: 10px;
+    background-color: orange;
 }
+
 
 <!-- Island header left and right alignment same line -->
 .alignment{

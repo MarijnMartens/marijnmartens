@@ -3,15 +3,18 @@
 /**
  * Created by PhpStorm.
  * User: Marijn
- * Date: 06/06/14
- * Time: 11:59
+ * Date: 18/06/14
+ * Time: 14:55
  */
 class Post extends AppModel
 {
-    public $name = 'pages';
+    public $validate = array(
+        'title' => array(
+            'rule' => 'notEmpty'
+        ),
+        'body' => array(
+            'rule' => 'notEmpty'
+        )
+    );
 
-    public function getPosts($page)
-    {
-        return $this->find('all', array('conditions' => array('page' => $page), 'order' => array('date' => 'DESC'), 'limit' => 3));
-    }
 } 
