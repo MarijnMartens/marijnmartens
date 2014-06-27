@@ -13,7 +13,7 @@ class Contact extends AppModel
     public $validate = array(
         'name' => array(
             'alphaNumeric' => array(
-                'rule' => 'alphaNumeric',
+                'rule' => array('custom', '/([\w.-]+ )+[\w+.-]/'),
                 'required' => true,
                 'message' => 'Letters and numbers only'
             ),

@@ -32,7 +32,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller
 {
-    public $components = array(
+   /* public $components = array(
         'Session',
         'Auth' => array(
             'loginRedirect' => array(
@@ -60,6 +60,6 @@ class AppController extends Controller
         }
         // Default deny
         return false;
-    }
+    }*/
 
 }

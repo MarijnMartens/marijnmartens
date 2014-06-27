@@ -17,7 +17,6 @@ class ContactController extends AppController
             'title' => 'Contact',
             'subtitle' => 'Want to tell me something?'
         );
-        $this->set('page_for_layout', 'contact');
         $this->set('data', $data);
     }
 
